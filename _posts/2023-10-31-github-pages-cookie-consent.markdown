@@ -36,3 +36,12 @@ Now edit the file and include the `cookiebot.html` file:
 And make sure the include happens *before* the include of `google-analytics.html`.
 
 That should be it. You can test your site locally to make sure everything still works: `bundle exec jekyll serve`. If everything is ok, merge your changes to your `main` branch and the Cookie consent pop-up should appear on your site!
+
+# Testing your cookie consent banner
+Just a while after I added the Cookiebot banner, I received a report from Cookiebot saying that there was a compliance issue on my website and that Google Analytics was being enabled without the visitor's consent. This was a bit confusing for me, because I thought I had done everything correctly. So I verified that the Cookiebot banner is working correctly in this way. I guess it only works if your website is not frequently visited:
+
+1. Open Google Analytics' realtime page. If your website is anything like mine, it shows 0 visitors.
+2. Now open a private browser window and go to your website. The Cookiebot banner should show up. Make sure Statistics is not selected and click on `Allow selection`
+3. Check Google Analytics. It should still show 0 visitors (give it a minute to update.)
+4. Now open a private browser window again, and go to your website. This time, allow all cookies.
+5. Check Google Analytics again. It should show 1 visitor. If this is the case, congratulations, the cookie consent banner is working correctly!
